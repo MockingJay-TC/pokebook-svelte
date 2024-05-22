@@ -1,6 +1,8 @@
-<script>
+<script lang="ts">
 	import ThemeModal from './ThemeModal.svelte';
 	import pokemon from '$lib/images/pokeCover.svg';
+	import { writable } from 'svelte/store';
+	import { theme } from '../utils/theme';
 </script>
 
 <div
@@ -29,8 +31,13 @@
 			/>
 		</div>
 	</div>
-	<div class="border-gray border rounded-full flex items-center justify-center cursor-pointer">
+
+	<button
+		on:click={theme.showModal}
+		class="border-gray border rounded-full flex items-center justify-center cursor-pointer"
+	>
 		<div class="bg-skin-base w-8 h-8 m-1 rounded-full" />
-	</div>
-	<!-- <ThemeModal /> -->
+	</button>
+
+	<ThemeModal />
 </div>
