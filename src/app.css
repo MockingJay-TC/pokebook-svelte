@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-white;
+	}
+	:root {
+		--primary: rgb(232, 83, 130);
+	}
+	.theme-yellow {
+		--primary: rgb(225, 167, 37);
+	}
+	.theme-blue {
+		--primary: rgb(57, 186, 223);
+	}
+}
+
+@font-face {
+	font-family: clash;
+	src: url(./lib/fonts/ClashDisplay-Variable.ttf);
+}
+
+@font-face {
+	font-family: general;
+	src: url(./lib/fonts/GeneralSans-Variable.ttf);
+}
+
+@layer components {
+	.search {
+		@apply font-general mt-16 lg:mt-28 mb-4 flex pl-6 justify-between items-center border-4 lg:border-8 w-full lg:gap-4 lg:min-w-[550px] border-skin-base rounded-[60px] shadow-inner;
+	}
+	.navSearch {
+		@apply font-general flex md:pl-4 pl-2  justify-start items-center border w-full border-g100 rounded-[60px] text-g300 md:shadow-md shadow-sm;
+	}
+}
