@@ -1,5 +1,6 @@
 <script>
 	import ThemeModal from './ThemeModal.svelte';
+	import pokemon from '$lib/images/pokeCover.svg';
 </script>
 
 <div
@@ -7,7 +8,9 @@
 >
 	<div class="flex justify-center items-center gap-4">
 		<a href="/">
-			<img src="assets/images/pokeCover.svg" alt="Poke Cover" class="lg:w-36 w-20 lg:mt-8" />
+			<picture>
+				<img src={pokemon} alt="Poke Cover" class="lg:w-36 w-20 lg:mt-8" />
+			</picture>
 		</a>
 		<a href="/" class="text-lg lg:text-2xl font-semibold font-clash cursor-pointer hidden lg:block">
 			Poke<span class="text-skin-base">book</span>
@@ -29,6 +32,5 @@
 	<div class="border-gray border rounded-full flex items-center justify-center cursor-pointer">
 		<div class="bg-skin-base w-8 h-8 m-1 rounded-full" />
 	</div>
-	<ThemeModal />
+	<!-- <ThemeModal /> -->
 </div>
-;

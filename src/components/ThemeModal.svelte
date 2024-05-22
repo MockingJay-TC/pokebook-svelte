@@ -1,5 +1,5 @@
 <script>
-	let open = true;
+	let open = false;
 </script>
 
 <div>
