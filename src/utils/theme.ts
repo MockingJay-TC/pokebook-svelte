@@ -1,18 +1,38 @@
 import { writable } from 'svelte/store';
 
-function themeModal(value: boolean) {
+function themeModal() {
 	const { subscribe, set } = writable();
-
+	set(false);
 	function showModal() {
 		set(true);
 	}
-	function hideModal(value: string) {
+	function hideModal() {
 		set(false);
-		console.log(value);
-		return value;
 	}
-
 	return { subscribe, showModal, hideModal };
 }
 
-export const theme = themeModal(false);
+
+function themeColor() {
+	const { subscribe, set } = writable();
+	set("pink")
+	function setColor(color: string) {
+		set(color);
+	}
+	return { subscribe, setColor };
+}
+
+
+function pokeSearch() {
+	const { subscribe, set } = writable();
+	set("")
+	function setSearch(value: string) {
+		set(value)
+	}
+	return { subscribe, setSearch }
+}
+
+
+export const search = pokeSearch();
+export const pokeColor = themeColor();
+export const theme = themeModal();

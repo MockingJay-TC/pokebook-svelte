@@ -1,7 +1,13 @@
 export interface PokeMon {
   name: string;
   url: string;
-  details: PokeMonDetail;
+}
+
+export interface PokemonFetch {
+  count: number;
+  next: string;
+  previous: string;
+  results: PokeMon[]
 }
 
 export interface PokeMonDetail extends PokeMon {

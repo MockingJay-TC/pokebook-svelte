@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { setContext, getContext } from 'svelte';
-	import { writable } from 'svelte/store';
-	import { theme } from '../utils/theme';
+	import { pokeColor, theme } from '../utils/theme';
+
+	const handleTheme = (color: string) => {
+		pokeColor.setColor(color);
+		theme.hideModal();
+	};
 </script>
 
 {#if $theme}
@@ -23,19 +25,19 @@
 				</h3>
 				<div class="flex items-center justify-center gap-4 bg-black/20 py-12 bg">
 					<button
-						on:click={() => theme.hideModal('pink')}
+						on:click={() => handleTheme('pink')}
 						class="border-gray border rounded-full flex items-center justify-center cursor-pointer"
 					>
 						<div class="bg-primary w-16 h-16 m-1 rounded-full" />
 					</button>
 					<button
-						on:click={() => theme.hideModal('blue')}
+						on:click={() => handleTheme('blue')}
 						class="border-gray hover:border rounded-full flex items-center justify-center cursor-pointer"
 					>
 						<div class="bg-secondary w-16 h-16 m-1 rounded-full" />
 					</button>
 					<button
-						on:click={() => theme.hideModal('yellow')}
+						on:click={() => handleTheme('yellow')}
 						class="border-gray hover:border rounded-full flex items-center justify-center cursor-pointer"
 					>
 						<div class="bg-altenate w-16 h-16 m-1 rounded-full" />
