@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { writable } from 'svelte/store';
+import type { PokeMonDetail } from '../Interfaces/interfaces';
 
 function pokemons() {
     const { subscribe, set } = writable();
 
-    function getAllPokemons(data: any) {
-        console.log(data)
+    function getAllPokemons(data: PokeMonDetail[]) {
         set(data);
     }
 
